@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Pets.Controllers
 {
-	public class iPetController : Controller
+	public class HomeController : Controller
 	{
 
 		[HttpGet("/")]

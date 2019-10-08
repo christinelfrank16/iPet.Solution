@@ -6,13 +6,26 @@
 	<meta charset="utf-8">
 	<title>iPet: Pet Preparedness</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="main.css">
+	<script src="main.js"></script>
 </head>
 <body>
 	<h1>iPet Home</h1>
 	<div id="owners">
 		<h3>Owners:</h3>
-			<p>There are no configured owners.</p>
+		@if(Model["ownerList"].Count == 0)
+		{
+			<p>There are no owners configured.</p>
 			<p>Create a new owner <a href="/owners/new">here</a>!</p>
+		}
+		else
+		{
+			<p>Click to see owner\'s profile</p>
+			@foreach(Owner owner in Model["ownerList"])
+			{
+				<li><a href="/owners/@owner.Id">@owner.Name</a></li>
+			}
+			<p></p>
+		}
 	</div>
 	<div id="pets">
 		<h3>Pet Preparedness:</h3>

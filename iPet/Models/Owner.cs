@@ -8,6 +8,8 @@ namespace Pets.Models
 		public string Name { get; set; }
 		public List<string> Items { get; set; }
 		public List<Pet> Pets { get; set; }
+		public int Id { get; }
+		private static int idCounter = 0;
 
 		public static List<Owner> _instances = new List<Owner>{};
 
@@ -17,6 +19,8 @@ namespace Pets.Models
 			Items = new List<string>{};
 			Pets = new List<Pet> { };
 			_instances.Add(this);
+			idCounter++;
+			Id = idCounter;
 		}
 
 		public void AddPet(Pet pet)
