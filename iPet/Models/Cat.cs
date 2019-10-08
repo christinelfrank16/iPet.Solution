@@ -6,11 +6,12 @@ namespace Pets.Models
 	{
 		public static new List<string> NeedsList = new List<string>{"bed", "food dish", "water bowl", "litter box", "scooper", "catnip", "cat food", "toys", "scratching post", "carrying case", "brush"};
 
-		public Cat(string name, List<string> characteristics)
+		public Cat(string name, List<string> characteristics, string blurb)
 		{
 			Name = name;
 			Type = "Cat";
 			Characteristics = characteristics;
+			Blurb = blurb;
 		}
 	}
 }

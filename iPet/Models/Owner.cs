@@ -33,5 +33,10 @@ namespace Pets.Models
 			Items.AddRange(items);
 			Items = Items.Distinct().ToList();
 		}
+
+		public static List<Owner> GetAll()
+		{
+			return _instances;
+		}
 	}
 }
