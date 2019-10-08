@@ -11,5 +11,11 @@ namespace Pets.Controllers
 			return View(petType);
 		}
 
+		[HttpGet("/pet/new")]
+		public ActionResult New()
+		{
+			return View();
+		}
+
 	}
 }

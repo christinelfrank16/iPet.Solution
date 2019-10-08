@@ -9,37 +9,39 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 <body>
-	<h1>iPet Owner</h1>
-	<h3>@Model.Name</h3>
-	<div class="profile">
+	<div class="container">
+		<h1>iPet Owner</h1>
+		<h3>@Model.Name</h3>
+		<div class="profile">
 
-	</div>
-	<div id="pets">
-		<h3>Your pets:</h3>
-		@if(Model.Pets.Count == 0)
-		{
-			<p>You have no pets!</p>
-			<h4>Check here for your preparedness for a type of pet!</h4>
-		<ul>
-			<li><a href="/cats">Cats</a></li>
-			<li><a href="/dogs">Dogs</a></li>
-		</ul>
-		}
-		else
-		{
-			@foreach(Pet pet in Model.Pets)
+		</div>
+		<div id="pets">
+			<h3>Your pets:</h3>
+			@if(Model.Pets.Count == 0)
 			{
-				<div class="card" style="width: 18rem;">
-					<img src="..." class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">@pet.Name</h5>
-						<p class="card-text">@pet.Blurb</p>
-						<a href="/{pet.Type}s/{pet.Id}" class="btn btn-primary">Go to My Page!</a>
-					</div>
-				</div>
+				<p>You have no pets!</p>
+				<h4>Check here for your preparedness for a type of pet!</h4>
+			<ul>
+				<li><a href="/cats">Cats</a></li>
+				<li><a href="/dogs">Dogs</a></li>
+			</ul>
 			}
-		}
-		
+			else
+			{
+				@foreach(Pet pet in Model.Pets)
+				{
+					<div class="card" style="width: 18rem;">
+						<img src="..." class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">@pet.Name</h5>
+							<p class="card-text">@pet.Blurb</p>
+							<a href="/{pet.Type}s/{pet.Id}" class="btn btn-primary">Go to My Page!</a>
+						</div>
+					</div>
+				}
+			}
+			
+		</div>
 	</div>
 
 </body>

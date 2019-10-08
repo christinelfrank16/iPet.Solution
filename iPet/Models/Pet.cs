@@ -9,6 +9,7 @@ namespace Pets.Models
 		public string Type { get; set; }
 		public static List<string> Characteristics { get; set; }
 		public string Blurb {get; set; }
+		public string ImageLink { get; set; }
 		
 	}
 }
