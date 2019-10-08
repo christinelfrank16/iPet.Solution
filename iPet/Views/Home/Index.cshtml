@@ -1,0 +1,37 @@
+@using Pet.Models;
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>iPet: Pet Preparedness</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css">
+	<script src="main.js"></script>
+</head>
+<body>
+	<h1>iPet Home</h1>
+	<div id="owners">
+		<h3>Owners:</h3>
+		@if(Model["ownerList"].Count == 0)
+		{
+			<p>There are no owners configured.</p>
+			<p>Create a new owner <a href="/owners/new">here</a>!</p>
+		}
+		else
+		{
+			<p>Click to see owner\'s profile</p>
+			@foreach(Owner owner in Model["ownerList"])
+			{
+				<li><a href="/owners/@owner.Id">@owner.Name</a></li>
+			}
+		}
+	</div>
+	<div id="pets">
+		<h3>Check here for your preparedness for a type of pet!</h3>
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+
+</body>
+</html>
